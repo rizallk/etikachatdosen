@@ -60,9 +60,9 @@ const validasiFormAwal = () => {
                 confirmButtonColor: "#3085d6",
               }).then((result) => {
                 if (result.isConfirmed) {
-                  window.location.replace("http://127.0.0.1:5500/index.html");
+                  window.location.replace("index.html");
                 } else if (result.dismiss === Swal.DismissReason.backdrop) {
-                  window.location.replace("http://127.0.0.1:5500/index.html");
+                  window.location.replace("index.html");
                 }
               });
             }
