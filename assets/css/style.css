@@ -1,0 +1,45 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.card-header h3 {
+  font-weight: 600;
+}
+
+.custom-badge {
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.profile svg:hover {
+  fill: white;
+}
+
+.profile:hover svg {
+  fill: white;
+}
+
+.notif.closed {
+  transition: opacity 2s;
+  opacity: 0;
+}
+
+.hr {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .custom-card-register {
+    width: 514px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .hr {
+    display: block;
+  }
+}

@@ -1,0 +1,148 @@
+<script>
+  if (
+    !localStorage.getItem("nama") &&
+    !localStorage.getItem("nim") &&
+    !localStorage.getItem("kelas")
+  ) {
+    window.location.replace("register.html");
+  }
+</script>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="title"></title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <main class="container my-3 my-md-5">
+      <div class="card shadow-sm">
+        <div class="card-header pt-3">
+          <div class="d-flex justify-content-between">
+            <h3>E-tika Chat Dosen</h3>
+            <button
+              type="button"
+              class="profile btn btn-sm btn-outline-secondary"
+              onclick="window.history.back();"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="30"
+                fill="currentColor"
+                class="bi bi-arrow-left"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div id="profil" class="col-md">
+              <!-- Profil -->
+              <h5>Profilmu</h5>
+              <div class="mb-3">
+                <label class="form-label">Nama Anda</label>
+                <input
+                  id="nama"
+                  type="text"
+                  class="form-control"
+                  placeholder="Masukkan nama Anda"
+                />
+                <small id="suggestName" class="text-primary mt-2 d-none"
+                  >Diharapkan Anda dapat menggunakan Nama Lengkap.<br />Contoh:
+                  Ananda Albert Mangiri</small
+                >
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Nomor Induk Mahasiswa</label>
+                <input
+                  id="nim"
+                  type="tel"
+                  class="form-control"
+                  placeholder="Masukkan Nomor Induk Mahasiswa"
+                  onkeypress="return onlyNumber(event)"
+                />
+                <small id="suggestNIM" class="text-primary mt-2 d-none"
+                  >Contoh: 210212345678</small
+                >
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Kelas</label>
+                <input
+                  id="kelas"
+                  type="text"
+                  class="form-control"
+                  placeholder="Masukkan kelas Anda"
+                />
+                <small id="suggestKelas" class="text-primary mt-2 d-none"
+                  >Contoh: A
+                </small>
+              </div>
+
+              <div class="mt-4">
+                <button
+                  id="btnEdit"
+                  type="button"
+                  class="btn btn-warning btn-sm"
+                >
+                  Simpan perubahan
+                </button>
+              </div>
+
+              <!-- End Form -->
+            </div>
+            <div class="col-md">
+              <hr class="hr" />
+              <!-- Template -->
+              <h5 class="mb-3">History Pesanmu</h5>
+              <div id="history">
+                <textarea
+                  class="form-control"
+                  rows="3"
+                  placeholder="Coming soon ..."
+                  disabled
+                ></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <small class="card-footer text-muted text-end">
+          <span id="version"></span> |
+          <a href="">GitHub</a>
+        </small>
+      </div>
+    </main>
+
+    <!-- Script -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="assets/js/script.js"></script>
+  </body>
+</html>
