@@ -1,9 +1,9 @@
 const formAwal = () => {
-  // Field Nama
-  const nama = document.getElementById("nama");
-  const suggestName = document.getElementById("suggestName");
+  const register = document.getElementById("register");
 
-  if (nama || suggestName) {
+  if (register) {
+    /*+=====================================================+*/
+    // Field Nama
     nama.maxLength = "70";
     nama.addEventListener("focus", function () {
       suggestName.classList.remove("d-none");
@@ -19,13 +19,10 @@ const formAwal = () => {
       );
       nama.value = finalNama;
     });
-  }
+    /*-=====================================================-*/
 
-  // Field NIM
-  const nim = document.getElementById("nim");
-  const suggestNIM = document.getElementById("suggestNIM");
-
-  if (nim || suggestNIM) {
+    /*+=====================================================+*/
+    // Field NIM
     nim.maxLength = "16";
     nim.addEventListener("focus", function () {
       suggestNIM.classList.remove("d-none");
@@ -35,13 +32,10 @@ const formAwal = () => {
       suggestNIM.classList.remove("d-block");
       suggestNIM.classList.add("d-none");
     });
-  }
+    /*-=====================================================-*/
 
-  // Field Kelas
-  const kelas = document.getElementById("kelas");
-  const suggestKelas = document.getElementById("suggestKelas");
-
-  if (kelas || suggestKelas) {
+    /*+=====================================================+*/
+    // Field Kelas
     kelas.maxLength = "1";
     kelas.addEventListener("focus", function () {
       suggestKelas.classList.remove("d-none");
@@ -54,6 +48,7 @@ const formAwal = () => {
     kelas.addEventListener("keyup", function () {
       kelas.value = kelas.value.toUpperCase();
     });
+    /*-=====================================================-*/
   }
 };
 

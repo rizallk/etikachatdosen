@@ -8,20 +8,23 @@ const formProfil = () => {
 
     btnEdit.addEventListener("click", function () {
       if (!nama.value) {
-        swalWithBootstrapButtons.fire({
+        Swal.fire({
           icon: "warning",
+          confirmButtonColor: "#3085d6",
           title: "Oops...",
           text: "Nama harus diisi!",
         });
       } else if (!nim.value) {
-        swalWithBootstrapButtons.fire({
+        Swal.fire({
           icon: "warning",
+          confirmButtonColor: "#3085d6",
           title: "Oops...",
           text: "NIM harus diisi!",
         });
       } else if (!kelas.value) {
-        swalWithBootstrapButtons.fire({
+        Swal.fire({
           icon: "warning",
+          confirmButtonColor: "#3085d6",
           title: "Oops...",
           text: "Kelas harus diisi!",
         });

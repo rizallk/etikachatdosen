@@ -1,10 +1,8 @@
 const validasiFormPesan = () => {
-  // const btnPesan = document.getElementById("buatPesan");
-  const salamNow = document.getElementById("now");
+  const index = document.getElementById("index");
 
-  const preview = document.getElementById("preview");
-
-  if (preview) {
+  if (index) {
+    /*+=====================================================+*/
     // Nama
     if (localStorage.getItem("nama")) {
       namaPrev.innerHTML = `Nama saya ${localStorage.getItem("nama")}`;
@@ -19,84 +17,161 @@ const validasiFormPesan = () => {
     }
 
     // Jurusan
-    jurusan.addEventListener("keyup", function () {
-      localStorage.setItem("jurusan", jurusan.value);
-      jurusanPrev.innerHTML = `jurusan ${jurusan.value},`;
-    });
+    // jurusan.addEventListener("keyup", function () {
+    //   localStorage.setItem("jurusan", jurusan.value);
+    //   jurusanPrev.innerHTML = `jurusan ${jurusan.value},`;
+    // });
 
-    // Prodi
-    prodi.addEventListener("keyup", function () {
-      localStorage.setItem("prodi", prodi.value);
-      prodiPrev.innerHTML = `prodi. ${prodi.value},`;
-    });
+    // // Prodi
+    // prodi.addEventListener("keyup", function () {
+    //   localStorage.setItem("prodi", prodi.value);
+    //   prodiPrev.innerHTML = `prodi. ${prodi.value},`;
+    // });
 
-    // Jenis Kelamin
-    if (pria.checked) {
-      localStorage.setItem("jk", "pria");
-      jkPrev.innerHTML = "Mner.";
-    }
-    pria.addEventListener("change", function () {
-      localStorage.setItem("jk", "pria");
+    // Jenis Kelamin penerima
+    // Pria
+    mner.addEventListener("change", function () {
       jkPrev.innerHTML = "Mner.";
     });
-    wanita.addEventListener("change", function () {
-      localStorage.setItem("jk", "wanita");
+    bapak.addEventListener("change", function () {
+      jkPrev.innerHTML = "Pak.";
+    });
+    // Wanita
+    enci.addEventListener("change", function () {
       jkPrev.innerHTML = "Enci.";
+    });
+    ibu.addEventListener("change", function () {
+      jkPrev.innerHTML = "Bu.";
+    });
+    // Custom penerima
+    // cp = custom penerima
+    cp.addEventListener("keyup", function () {
+      cp.value = cp.value.charAt(0).toUpperCase() + cp.value.slice(1);
+      jkPrev.innerHTML = cp.value + ".";
+      salamPrev.innerHTML = localStorage.getItem("salam");
     });
 
     // Gunakan option
     // option 1
     option1.addEventListener("change", function () {
       if (option1.checked) {
-        if (pria.checked) {
+        if (mner.checked) {
           jkPrev.innerHTML = "Mner,";
           option1Prev.innerHTML = "mohon maaf menganggu waktunya.";
         }
-        if (wanita.checked) {
+        if (bapak.checked) {
+          jkPrev.innerHTML = "Pak,";
+          option1Prev.innerHTML = "mohon maaf menganggu waktunya.";
+        }
+        if (enci.checked) {
           jkPrev.innerHTML = "Enci,";
           option1Prev.innerHTML = "mohon maaf menganggu waktunya.";
         }
+        if (ibu.checked) {
+          jkPrev.innerHTML = "Bu,";
+          option1Prev.innerHTML = "mohon maaf menganggu waktunya.";
+        }
+        option1Prev.innerHTML = "Mohon maaf menganggu waktunya.";
       } else {
-        if (pria.checked) {
-          jkPrev.innerHTML = "Mner.";
+        if (mner.checked) {
+          jkPrev.innerHTML = "Mner,";
           option1Prev.innerHTML = "";
         }
-        if (wanita.checked) {
-          jkPrev.innerHTML = "Enci.";
+        if (bapak.checked) {
+          jkPrev.innerHTML = "Pak,";
           option1Prev.innerHTML = "";
         }
+        if (enci.checked) {
+          jkPrev.innerHTML = "Enci,";
+          option1Prev.innerHTML = "";
+        }
+        if (ibu.checked) {
+          jkPrev.innerHTML = "Bu,";
+          option1Prev.innerHTML = "";
+        }
+        option1Prev.innerHTML = "";
       }
     });
 
     // Salam
     localStorage.setItem("salam", salamNow.value);
-    salamPrev.innerHTML = salamNow.value;
+    salamPrev.innerHTML = salamNow.value + ".";
 
     salam.addEventListener("change", function () {
-      const index = salam.selectedIndex;
-      const options = salam.options;
+      const i = salam.selectedIndex;
+      const opt = salam.options;
       const key = "salam";
-      if (index == 0) {
-        localStorage.setItem(key, salamNow.value);
-        salamPrev.innerHTML = salamNow.value;
-      } else if (index == 1) {
-        localStorage.setItem(key, options[index].text);
-        salamPrev.innerHTML = options[index].text;
-      } else if (index == 2) {
-        localStorage.setItem(key, options[index].text);
-        salamPrev.innerHTML = options[index].text;
-      } else if (index == 3) {
-        localStorage.setItem(key, options[index].text);
-        salamPrev.innerHTML = options[index].text;
-      } else if (index == 4) {
-        localStorage.setItem(key, options[index].text);
-        salamPrev.innerHTML = options[index].text;
-      } else if (index == 5) {
+      if (i == 0) {
+        cs.value = "";
+        if (mner.checked || bapak.checked || enci.checked || ibu.checked) {
+          salamPrev.innerHTML = salamNow.value;
+          localStorage.setItem(key, salamNow.value);
+        } else {
+          salamPrev.innerHTML = salamNow.value + ".";
+          localStorage.setItem(key, salamNow.value);
+        }
+      } else if (i == 1) {
+        cs.value = "";
+        if (mner.checked || bapak.checked || enci.checked || ibu.checked) {
+          salamPrev.innerHTML = opt[i].text;
+          localStorage.setItem(key, opt[i].text);
+        } else {
+          salamPrev.innerHTML = opt[i].text + ".";
+          localStorage.setItem(key, opt[i].text);
+        }
+      } else if (i == 2) {
+        cs.value = "";
+        if (mner.checked || bapak.checked || enci.checked || ibu.checked) {
+          salamPrev.innerHTML = opt[i].text;
+          localStorage.setItem(key, opt[i].text);
+        } else {
+          salamPrev.innerHTML = opt[i].text + ".";
+          localStorage.setItem(key, opt[i].text);
+        }
+      } else if (i == 3) {
+        cs.value = "";
+        if (mner.checked || bapak.checked || enci.checked || ibu.checked) {
+          salamPrev.innerHTML = opt[i].text;
+          localStorage.setItem(key, opt[i].text);
+        } else {
+          salamPrev.innerHTML = opt[i].text + ".";
+          localStorage.setItem(key, opt[i].text);
+        }
+      } else if (i == 4) {
+        cs.value = "";
+        if (mner.checked || bapak.checked || enci.checked || ibu.checked) {
+          salamPrev.innerHTML = opt[i].text;
+          localStorage.setItem(key, opt[i].text);
+        } else {
+          salamPrev.innerHTML = opt[i].text + ".";
+          localStorage.setItem(key, opt[i].text);
+        }
+      } else if (i == 5) {
         salamPrev.innerHTML = "";
-        localStorage.setItem(key, customSalam.value);
-        customSalam.addEventListener("keyup", function () {
-          localStorage.setItem(key, customSalam.value);
-          salamPrev.innerHTML = customSalam.value;
+        localStorage.setItem(key, cs.value);
+        cs.addEventListener("keyup", function () {
+          cs.value = cs.value.charAt(0).toUpperCase() + cs.value.slice(1);
+          if (cs.value.charAt(cs.value.length - 1) == ".") {
+            salamPrev.innerHTML = cs.value;
+            localStorage.setItem(key, cs.value);
+          } else if (cs.value.charAt(cs.value.length - 1) == "?") {
+            salamPrev.innerHTML = cs.value;
+            localStorage.setItem(key, cs.value);
+          } else {
+            if (
+              mner.checked ||
+              bapak.checked ||
+              enci.checked ||
+              ibu.checked ||
+              cp.value
+            ) {
+              salamPrev.innerHTML = cs.value;
+              localStorage.setItem(key, cs.value);
+            } else {
+              salamPrev.innerHTML = cs.value + ".";
+              localStorage.setItem(key, cs.value);
+            }
+          }
         });
       }
     });
@@ -104,13 +179,25 @@ const validasiFormPesan = () => {
     // Tujuan
     tujuan.addEventListener("keyup", function () {
       localStorage.setItem("tujuan", tujuan.value);
-      tujuanPrev.innerHTML = `<br /><br />${tujuan.value}.`;
+      if (tujuan.value.charAt(tujuan.value.length - 1) == ".") {
+        tujuanPrev.innerHTML = `<br /><br />${tujuan.value}`;
+      } else if (tujuan.value.charAt(tujuan.value.length - 1) == "?") {
+        tujuanPrev.innerHTML = `<br /><br />${tujuan.value}`;
+      } else {
+        tujuanPrev.innerHTML = `<br /><br />${tujuan.value}.`;
+      }
     });
 
     // Pertanyaan
     pertanyaan.addEventListener("keyup", function () {
       localStorage.setItem("pertanyaan", pertanyaan.value);
-      pertaPrev.innerHTML = `<br />${pertanyaan.value}.`;
+      if (pertanyaan.value.charAt(pertanyaan.value.length - 1) == ".") {
+        pertaPrev.innerHTML = `<br />${pertanyaan.value}`;
+      } else if (pertanyaan.value.charAt(pertanyaan.value.length - 1) == "?") {
+        pertaPrev.innerHTML = `<br />${pertanyaan.value}`;
+      } else {
+        pertaPrev.innerHTML = `<br />${pertanyaan.value}.`;
+      }
     });
 
     // Ucapan
@@ -170,33 +257,7 @@ const validasiFormPesan = () => {
     //     notif.innerHTML = "";
     //   }, 5600);
     // });
-
-    //   btnPesan.addEventListener("click", function () {
-    //     // Salam pembuka
-    //     const index = salam.selectedIndex;
-    //     const options = salam.options;
-    //     const key = "salam";
-
-    //     if (index == 0) {
-    //       alert(salamNow.value);
-    //       localStorage.setItem(key, salamNow.value);
-    //     } else if (index == 1) {
-    //       alert(options[index].text);
-    //       localStorage.setItem(key, options[index].text);
-    //     } else if (index == 2) {
-    //       alert(options[index].text);
-    //       localStorage.setItem(key, options[index].text);
-    //     } else if (index == 3) {
-    //       alert(options[index].text);
-    //       localStorage.setItem(key, options[index].text);
-    //     } else if (index == 4) {
-    //       alert(options[index].text);
-    //       localStorage.setItem(key, options[index].text);
-    //     } else if (index == 5) {
-    //       alert(customSalam.value);
-    //       localStorage.setItem(key, customSalam.value);
-    //     }
-    //   });
+    /*-=====================================================-*/
   }
 };
 

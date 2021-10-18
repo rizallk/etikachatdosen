@@ -34,8 +34,8 @@
     <!-- Style CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
-  <body>
-    <main class="container d-md-flex justify-content-md-center my-3 my-md-5">
+  <body id="index">
+    <main class="container my-3 my-md-5">
       <div class="card custom-card shadow-sm">
         <div class="card-header pt-3">
           <div class="d-flex justify-content-between">
@@ -66,21 +66,47 @@
               <!-- Form -->
               <h5>Buat pesanmu!</h5>
               <!-- <hr /> -->
+              <!-- Penerima -->
               <div id="jenisKelamin" class="mb-3 mt-4">
-                <label class="form-label">Jenis kelamin penerima</label>
-                <div class="form-check">
+                <label class="form-label">Penerima</label>
+                <!-- Pria -->
+                <div id="priaRadio" class="form-check d-block">
                   <input
                     class="form-check-input"
                     type="radio"
                     id="pria"
                     name="jk"
-                    checked
                   />
                   <label class="form-check-label" for="flexRadioDefault1">
                     Pria
                   </label>
                 </div>
-                <div class="form-check">
+                <div id="priaSelect" class="d-none">
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="jkPria"
+                      id="mner"
+                    />
+                    <label class="form-check-label" for="inlineRadio1"
+                      >Mner</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="jkPria"
+                      id="bapak"
+                    />
+                    <label class="form-check-label" for="inlineRadio2"
+                      >Bapak</label
+                    >
+                  </div>
+                </div>
+                <!-- Wanita -->
+                <div id="wanitaRadio" class="form-check d-block">
                   <input
                     class="form-check-input"
                     type="radio"
@@ -91,13 +117,55 @@
                     Wanita
                   </label>
                 </div>
+                <div id="wanitaSelect" class="d-none">
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="jkWanita"
+                      id="enci"
+                    />
+                    <label class="form-check-label" for="inlineRadio1"
+                      >Enci</label
+                    >
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="jkWanita"
+                      id="ibu"
+                    />
+                    <label class="form-check-label" for="inlineRadio2"
+                      >Ibu</label
+                    >
+                  </div>
+                </div>
+                <!-- Custom Penerima -->
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="customJk"
+                    name="jk"
+                  />
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Custom
+                  </label>
+                </div>
+                <input
+                  id="cp"
+                  type="text"
+                  class="form-control d-none"
+                  placeholder="Custom penerima"
+                />
               </div>
 
               <div class="mb-3">
                 <label class="form-label">Salam pembuka</label>
                 <!-- <p id="waktu"></p> -->
                 <select id="salam" class="form-select">
-                  <option id="now" selected></option>
+                  <option id="salamNow" selected></option>
                   <option value="Selamat pagi">Selamat pagi</option>
                   <option>Selamat siang</option>
                   <option>Selamat sore</option>
@@ -105,7 +173,7 @@
                   <option>Custom</option>
                 </select>
                 <input
-                  id="customSalam"
+                  id="cs"
                   type="text"
                   class="form-control d-none"
                   placeholder="Custom salam"
@@ -142,7 +210,7 @@
                   rows="2"
                   placeholder="Pertanyaan yang sopan."
                 ></textarea>
-                <div id="suggestPertanyaan" class="d-block">
+                <div id="suggestPerta" class="d-block">
                   <span id="sp1" class="badge custom-badge bg-info mt-2"
                     >Apakah Mner ada waktu untuk minggu ini ?</span
                   >
@@ -162,7 +230,7 @@
                   rows="1"
                   placeholder="Terima kasih."
                 ></textarea>
-                <div id="suggestUcapan" class="d-block">
+                <div id="suggestUcap" class="d-block">
                   <span id="su1" class="badge custom-badge bg-info mt-2"
                     >Terima kasih sebelumnya Mner.</span
                   >
@@ -174,7 +242,9 @@
             </div>
             <div class="col-md">
               <hr class="hr" />
+
               <!-- Optional -->
+
               <h5>Optional</h5>
               <div class="mb-3">
                 <div class="form-check form-switch">
@@ -190,30 +260,38 @@
                 </div>
               </div>
 
+              <!-- Fakultas, Jurusan, Prodi -->
               <div class="mb-3">
-                <label class="form-label">Jurusan</label>
-                <input
-                  id="jurusan"
-                  type="text"
-                  class="form-control"
-                  placeholder="Masukkan jurusanmu"
-                />
-                <small id="suggestJurusan" class="text-primary mt-2 d-none"
-                  >Contoh: Teknik Elektro
-                </small>
+                <label class="form-label">Fakultas</label>
+                <select id="fak" class="form-select">
+                  <option selected>Pilih Fakultas</option>
+                </select>
               </div>
-
-              <div class="mb-3">
-                <label class="form-label">Program Studi</label>
+              <div id="jurSelect" class="mb-3 d-none">
+                <label class="form-label">Jurusan</label>
+                <select id="jur" class="form-select">
+                  <option selected>Pilih Jurusan</option>
+                  <option></option>
+                </select>
                 <input
-                  id="prodi"
+                  id="customJur"
                   type="text"
-                  class="form-control"
-                  placeholder="Masukkan program studimu"
+                  class="form-control d-none"
+                  placeholder="Masukkan Jurusanmu"
                 />
-                <small id="suggestProdi" class="text-primary mt-2 d-none"
-                  >Contoh: Teknik Informatika
-                </small>
+              </div>
+              <div id="prodiSelect" class="mb-3 d-none">
+                <label class="form-label">Prodi</label>
+                <select id="prodi" class="form-select">
+                  <option selected>Pilih Program Studi</option>
+                  <option></option>
+                </select>
+                <input
+                  id="customProdi"
+                  type="text"
+                  class="form-control d-none"
+                  placeholder="Masukkan Program studimu"
+                />
               </div>
 
               <hr />
@@ -282,7 +360,9 @@
         </div>
         <small class="card-footer text-muted text-end">
           <span id="version"></span> |
-          <a target="_blank" href="https://github.com/rizallk/etikachatdosen">GitHub</a>
+          <a target="_blank" href="https://github.com/rizallk/etikachatdosen"
+            >GitHub</a
+          >
         </small>
       </div>
     </main>
@@ -290,6 +370,6 @@
     <!-- Script -->
     <!-- JavaScript Bundle with Popper -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script type="module" src="assets/js/script.js"></script>
+    <script type="module" src="assets/js/main.js"></script>
   </body>
 </html>

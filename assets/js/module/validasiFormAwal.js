@@ -1,8 +1,10 @@
 const validasiFormAwal = () => {
   // Validasi Form Awal
-  const btnSubmit = document.getElementById("btnSubmit");
+  const register = document.getElementById("register");
 
-  if (btnSubmit) {
+  if (register) {
+    /*+=====================================================+*/
+    // Submit button
     btnSubmit.addEventListener("click", function () {
       if (!nama.value) {
         Swal.fire({
@@ -70,6 +72,7 @@ const validasiFormAwal = () => {
         }
       }
     });
+    /*-=====================================================-*/
   }
 };
 
