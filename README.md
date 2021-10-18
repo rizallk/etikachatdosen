@@ -8,4 +8,8 @@ Tools ini belum sepenuhnya full release, jika kamu menemukan bug, kamu bisa lang
 ## Open Source!
 Tools ini bersifat Open Source, jika kamu ingin berkontribusi pada project ini serta memiliki ide-ide yang bagus, atau saran yang bagus. Kamu bisa melakukan Pull Request pada repository ini.
 
+## Pembaruan
+
+Lihat perubahan dan versi Tools disini https://github.com/rizallk/etikachatdosen/blob/main/ReleaseNotes.md
+
 ## Contributor
