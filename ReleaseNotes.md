@@ -1,5 +1,13 @@
 # Release Notes
 
+## Update Beta 2.0
+(23-Oktober-2021)
+- Meminimalisir kode Javascript
+- Memperbaiki history preview pesan ketika laman direload
+- Menambahkan fitur bagikan
+- Menambahkan fitur simpan pesan
+- Memperbaiki saran pesan sesuai dengan input penerima
+
 ## Update Beta 1.7
 (18-Oktober-2021)
 - Meminimalisir kode Javascript
