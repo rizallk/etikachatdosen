@@ -43,8 +43,8 @@ const validasiFormAwal = () => {
           });
         } else {
           Swal.fire({
-            title: "Apakah Anda yakin?",
-            // text: "Data Awal anda akan disimpan.<br>Namun Anda bisa mengubahnya kapan saja.",
+            title: "Just info",
+            text: "Data Anda akan tersimpan di local storage, jika Anda melakukan hapus data browser, maka semua data akan ikut terhapus.",
             icon: "warning",
             showCancelButton: true,
             confirmButtonColor: "#3085d6",

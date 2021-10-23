@@ -12,6 +12,9 @@ import formPesan from "./module/formPesan.js";
 import validasiFormPesan from "./module/validasiFormPesan.js";
 import formProfil from "./module/formProfil.js";
 import fakultas from "./module/fakultas.js";
+import mainFunction from "./module/mainFunction.js";
+
+mainFunction();
 
 formAwal();
 validasiFormAwal();
@@ -25,28 +28,23 @@ formProfil();
 // +===========================================================+
 
 // Versi tools
-version.innerHTML = "Beta 1.7";
+version.innerHTML = "Beta 2.0";
 
 // Title
 title.innerHTML = "E-tika Chat Dosen";
 
-// Base URL
+// ================================================
+// Testing
 
-// const total = localStorage.getItem("jmlPesan");
-// const container = document.getElementById("history");
-// for (let i = 1; i <= total; i++) {
-//   let pesan = `history${i}`;
-//   console.log(localStorage.getItem(pesan));
-//   const textArea = document.createElement("textarea");
-//   const btnCopy = document.createElement("button");
-//   textArea.className = "form-control";
-//   textArea.rows = "3";
-//   textArea.placeholder = "Pesan ...";
-//   textArea.value = i;
-//   btnCopy.className = "btn btn-sm btn-outline-primary mb-3";
-//   btnCopy.id = i;
-//   btnCopy.type = "button";
-//   btnCopy.innerText = "Copy";
-//   container.appendChild(textArea);
-//   container.appendChild(btnCopy);
+var str = "your long string with many words. anjay mabar";
+var wordCount = str.match(/(\w+)/g).length;
+
+// for (let i = 0; i < wordCount; i++) {
+//   if (str.split(" ")[i] == "anjay") {
+//     console.log(`kata yang terpilih adalah : ${str.split(" ")[i]}`);
+//     break;
+//   }
+//   console.log(str.split(" ")[i]);
 // }
+
+// ================================================

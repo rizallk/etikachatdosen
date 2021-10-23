@@ -202,6 +202,7 @@ const fakultas = () => {
       }
     });
 
+    // Jurusan
     jur.addEventListener("change", function () {
       const i = jur.selectedIndex;
       if (i == 1) {
@@ -235,9 +236,13 @@ const fakultas = () => {
         letter.toUpperCase()
       );
       customJur.value = final;
+      setData("jurusan", customJur.value);
       jurusanPrev.innerHTML = `jurusan ${customJur.value},`;
     });
 
+    if (getData("jurusan")) {
+      jurusanPrev.innerHTML = `jurusan ${getData("jurusan")},`;
+    }
     jur.addEventListener("change", function () {
       const i = jur.selectedIndex;
       const opt = jur.options;
@@ -265,6 +270,7 @@ const fakultas = () => {
         optionCustom(prodi);
         clearData(prodi);
         printData(dataProdiElektro, prodi);
+        setData("jurusan", opt[i].text);
         jurusanPrev.innerHTML = `jurusan ${opt[i].text},`;
       } else if (i == 3) {
         prodiSelect.classList.remove("d-none");
@@ -280,6 +286,7 @@ const fakultas = () => {
 
         optionCustom(prodi);
         clearData(prodi);
+        setData("jurusan", opt[i].text);
         jurusanPrev.innerHTML = `jurusan ${opt[i].text},`;
       } else if (i == 4) {
         prodiSelect.classList.remove("d-none");
@@ -295,10 +302,14 @@ const fakultas = () => {
 
         optionCustom(prodi);
         clearData(prodi);
+        setData("jurusan", opt[i].text);
         jurusanPrev.innerHTML = `jurusan ${opt[i].text},`;
       }
     });
 
+    if (getData("prodi")) {
+      prodiPrev.innerHTML = `prodi. ${getData("prodi")},`;
+    }
     prodi.addEventListener("change", function () {
       const i = prodi.selectedIndex;
       if (i == 1) {
@@ -320,6 +331,7 @@ const fakultas = () => {
         (letter) => letter.toUpperCase()
       );
       customProdi.value = final;
+      setData("prodi", customProdi.value);
       prodiPrev.innerHTML = `prodi. ${customProdi.value},`;
     });
 
@@ -332,8 +344,10 @@ const fakultas = () => {
 
         prodiPrev.innerHTML = "";
       } else if (i == 2) {
+        setData("prodi", opt[i].text);
         prodiPrev.innerHTML = `prodi. ${opt[i].text},`;
       } else if (i == 3) {
+        setData("prodi", opt[i].text);
         prodiPrev.innerHTML = `prodi. ${opt[i].text},`;
       }
     });

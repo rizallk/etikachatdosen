@@ -11,8 +11,13 @@ const formPesan = () => {
         mner.checked = true;
         enci.checked = false;
         if (mner) {
-          jkPrev.innerHTML = "Mner.";
-          salamPrev.innerHTML = localStorage.getItem("salam");
+          setData("penerima", "Mner.");
+          jkPrev.innerHTML = getData("penerima");
+          salamPrev.innerHTML = getData("salam");
+          sp1.innerHTML = "Apakah Mner ada waktu untuk minggu ini ?";
+          sp2.innerHTML = "Apakah Mner memiliki waktu ?";
+          su1.innerHTML = "Terima kasih sebelumnya Mner";
+          su2.innerHTML = "Terima kasih atas waktunya Mner";
         }
 
         priaSelect.classList.remove("d-none");
@@ -38,8 +43,13 @@ const formPesan = () => {
         enci.checked = true;
         mner.checked = false;
         if (enci) {
-          jkPrev.innerHTML = "Enci.";
-          salamPrev.innerHTML = localStorage.getItem("salam");
+          setData("penerima", "Enci.");
+          jkPrev.innerHTML = getData("penerima");
+          salamPrev.innerHTML = getData("salam");
+          sp1.innerHTML = "Apakah Enci ada waktu untuk minggu ini ?";
+          sp2.innerHTML = "Apakah Enci memiliki waktu ?";
+          su1.innerHTML = "Terima kasih sebelumnya Enci";
+          su2.innerHTML = "Terima kasih atas waktunya Enci";
         }
 
         wanitaSelect.classList.remove("d-none");
@@ -63,7 +73,11 @@ const formPesan = () => {
       bapak.checked = false;
       enci.checked = false;
       ibu.checked = false;
-      salamPrev.innerHTML = localStorage.getItem("salam") + ".";
+      sp1.innerHTML = `Apakah ada waktu untuk minggu ini ?`;
+      sp2.innerHTML = `Apakah memiliki waktu ?`;
+      su1.innerHTML = `Terima kasih sebelumnya`;
+      su2.innerHTML = `Terima kasih atas waktunya`;
+      salamPrev.innerHTML = getData("salam") + ".";
 
       priaRadio.classList.remove("d-none");
       priaRadio.classList.add("d-block");
@@ -144,14 +158,20 @@ const formPesan = () => {
         suggestTujuan.classList.add("d-block");
       }
     });
+    st1.innerHTML = "Saya ingin bertanya";
     st1.addEventListener("click", function () {
-      tujuan.value = "Saya ingin bertanya ...";
+      tujuan.value = st1.innerHTML;
+      setData("tujuan", tujuan.value);
+      tujuan.value = `${getData("tujuan")} ...`;
       suggestTujuan.classList.remove("d-block");
       suggestTujuan.classList.add("d-none");
       tujuanPrev.innerHTML = "<br /><br />Saya ingin bertanya.";
     });
+    st2.innerHTML = "Saya ingin mengajukan";
     st2.addEventListener("click", function () {
-      tujuan.value = "Saya ingin mengajukan ...";
+      tujuan.value = st2.innerHTML;
+      setData("tujuan", tujuan.value);
+      tujuan.value = `${getData("tujuan")} ...`;
       suggestTujuan.classList.remove("d-block");
       suggestTujuan.classList.add("d-none");
       tujuanPrev.innerHTML = "<br /><br />Saya ingin mengajukan.";
@@ -169,14 +189,20 @@ const formPesan = () => {
         suggestPerta.classList.add("d-block");
       }
     });
+    sp1.innerHTML = "Apakah ada waktu untuk minggu ini ?";
     sp1.addEventListener("click", function () {
-      pertanyaan.value = "Apakah mner ada waktu untuk minggu ini ?";
+      pertanyaan.value = sp1.innerHTML;
+      setData("pertanyaan", pertanyaan.value);
+      pertanyaan.value = getData("pertanyaan");
       suggestPerta.classList.remove("d-block");
       suggestPerta.classList.add("d-none");
       pertaPrev.innerHTML = `<br />${pertanyaan.value}`;
     });
+    sp2.innerHTML = "Apakah memiliki waktu ?";
     sp2.addEventListener("click", function () {
-      pertanyaan.value = "Apakah enci memiliki waktu ?";
+      pertanyaan.value = sp2.innerHTML;
+      setData("pertanyaan", pertanyaan.value);
+      pertanyaan.value = getData("pertanyaan");
       suggestPerta.classList.remove("d-block");
       suggestPerta.classList.add("d-none");
       pertaPrev.innerHTML = `<br />${pertanyaan.value}`;
@@ -192,17 +218,23 @@ const formPesan = () => {
         suggestUcap.classList.add("d-block");
       }
     });
+    su1.innerHTML = "Terima kasih sebelumnya";
     su1.addEventListener("click", function () {
-      ucapan.value = "Terima kasih sebelumnya mner.";
+      ucapan.value = su1.innerHTML;
+      setData("ucapan", ucapan.value);
+      ucapan.value = getData("ucapan");
       suggestUcap.classList.remove("d-block");
       suggestUcap.classList.add("d-none");
-      penutupPrev.innerHTML = `<br /><br />${ucapan.value}`;
+      penutupPrev.innerHTML = `<br /><br />${ucapan.value}.`;
     });
+    su2.innerHTML = "Terima kasih atas waktunya";
     su2.addEventListener("click", function () {
-      ucapan.value = "Terima kasih atas waktunya enci.";
+      ucapan.value = su2.innerHTML;
+      setData("ucapan", ucapan.value);
+      ucapan.value = getData("ucapan");
       suggestUcap.classList.remove("d-block");
       suggestUcap.classList.add("d-none");
-      penutupPrev.innerHTML = `<br /><br />${ucapan.value}`;
+      penutupPrev.innerHTML = `<br /><br />${ucapan.value}.`;
     });
 
     // Optional
