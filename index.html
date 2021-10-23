@@ -191,12 +191,8 @@
                   placeholder="Saya ingin ..."
                 ></textarea>
                 <div id="suggestTujuan" class="d-block">
-                  <span id="st1" class="badge custom-badge bg-info mt-2"
-                    >Saya ingin bertanya</span
-                  >
-                  <span id="st2" class="badge custom-badge bg-info mt-2"
-                    >Saya ingin mengajukan</span
-                  >
+                  <span id="st1" class="badge custom-badge bg-info mt-2"></span>
+                  <span id="st2" class="badge custom-badge bg-info mt-2"></span>
                 </div>
               </div>
 
@@ -211,12 +207,8 @@
                   placeholder="Pertanyaan yang sopan."
                 ></textarea>
                 <div id="suggestPerta" class="d-block">
-                  <span id="sp1" class="badge custom-badge bg-info mt-2"
-                    >Apakah Mner ada waktu untuk minggu ini ?</span
-                  >
-                  <span id="sp2" class="badge custom-badge bg-info mt-2"
-                    >Apakah Enci memiliki waktu ?</span
-                  >
+                  <span id="sp1" class="badge custom-badge bg-info mt-2"></span>
+                  <span id="sp2" class="badge custom-badge bg-info mt-2"></span>
                 </div>
               </div>
 
@@ -231,12 +223,8 @@
                   placeholder="Terima kasih."
                 ></textarea>
                 <div id="suggestUcap" class="d-block">
-                  <span id="su1" class="badge custom-badge bg-info mt-2"
-                    >Terima kasih sebelumnya Mner.</span
-                  >
-                  <span id="su2" class="badge custom-badge bg-info mt-2"
-                    >Terima kasih atas waktunya Enci.</span
-                  >
+                  <span id="su1" class="badge custom-badge bg-info mt-2"></span>
+                  <span id="su2" class="badge custom-badge bg-info mt-2"></span>
                 </div>
               </div>
             </div>
@@ -299,7 +287,11 @@
               <!-- Preview Pesan -->
 
               <h5>Preview</h5>
-              <div class="form-control" id="preview" contenteditable="true">
+              <div
+                class="form-control mb-2"
+                id="preview"
+                contenteditable="true"
+              >
                 <span id="salamPrev"></span>
                 <span id="jkPrev"></span>
                 <span id="option1Prev"></span>
@@ -313,7 +305,7 @@
                 <span id="penutupPrev"></span>
               </div>
 
-              <small class="text-primary notif" id="notif"></small>
+              <div class="notif" id="notif"></div>
 
               <div class="d-flex justify-content-center mt-3">
                 <div class="btn-group" role="group">
@@ -329,7 +321,6 @@
                     id="share"
                     class="btn btn-sm btn-outline-danger"
                     title="Test"
-                    disabled
                   >
                     Bagikan
                   </button>
@@ -337,24 +328,13 @@
                     type="button"
                     id="save"
                     class="btn btn-sm btn-outline-success"
-                    disabled
                   >
                     Simpan
                   </button>
                 </div>
-
-                <!-- <button type="button" id="save" class="btn btn-sm btn-primary">
-                  Copy
-                </button> -->
               </div>
             </div>
           </div>
-          <!-- 
-          <div class="d-flex justify-content-center mt-4">
-            <button id="buatPesan" type="button" class="btn btn-primary">
-              Submit
-            </button>
-          </div> -->
 
           <!-- End Form -->
         </div>
