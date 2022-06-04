@@ -1,5 +1,8 @@
 # Release Notes
 
+## Update Beta 2.2
+- Bug Fixing
+
 ## Update Beta 2.0
 (23-Oktober-2021)
 - Meminimalisir kode Javascript
@@ -15,3 +18,6 @@
 - Mengubah opsi penerima lebih efisien
 - Memperbaiki validasi ubah profil
 - Mengubah opsi jurusan dan prodi lebih efisien
+
+## Beta 1.0
+Release
