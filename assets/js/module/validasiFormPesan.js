@@ -19,19 +19,19 @@ const validasiFormPesan = () => {
     // Jenis Kelamin penerima
     // Pria
     if (getData('penerima')) {
-      jkPrev.innerHTML = getData('penerima');
+      jkPrev.innerHTML = getData('penerima') + '.';
     }
     mner.addEventListener('change', function () {
-      setData('penerima', 'Mner.');
-      jkPrev.innerHTML = getData('penerima');
+      setData('penerima', 'Mner');
+      jkPrev.innerHTML = getData('penerima') + '.';
       sp1.innerHTML = 'Apakah Mner ada waktu untuk minggu ini ?';
       sp2.innerHTML = 'Apakah Mner memiliki waktu ?';
       su1.innerHTML = 'Terima kasih sebelumnya Mner';
       su2.innerHTML = 'Terima kasih atas waktunya Mner';
     });
     bapak.addEventListener('change', function () {
-      setData('penerima', 'Pak.');
-      jkPrev.innerHTML = getData('penerima');
+      setData('penerima', 'Pak');
+      jkPrev.innerHTML = getData('penerima') + '.';
       sp1.innerHTML = 'Apakah Bapak ada waktu untuk minggu ini ?';
       sp2.innerHTML = 'Apakah Bapak memiliki waktu ?';
       su1.innerHTML = 'Terima kasih sebelumnya Pak';
@@ -39,16 +39,16 @@ const validasiFormPesan = () => {
     });
     // Wanita
     enci.addEventListener('change', function () {
-      setData('penerima', 'Enci.');
-      jkPrev.innerHTML = getData('penerima');
+      setData('penerima', 'Enci');
+      jkPrev.innerHTML = getData('penerima') + '.';
       sp1.innerHTML = 'Apakah Enci ada waktu untuk minggu ini ?';
       sp2.innerHTML = 'Apakah Enci memiliki waktu ?';
       su1.innerHTML = 'Terima kasih sebelumnya Enci';
       su2.innerHTML = 'Terima kasih atas waktunya Enci';
     });
     ibu.addEventListener('change', function () {
-      setData('penerima', 'Bu.');
-      jkPrev.innerHTML = getData('penerima');
+      setData('penerima', 'Bu');
+      jkPrev.innerHTML = getData('penerima') + '.';
       sp1.innerHTML = 'Apakah Ibu ada waktu untuk minggu ini ?';
       sp2.innerHTML = 'Apakah Ibu memiliki waktu ?';
       su1.innerHTML = 'Terima kasih sebelumnya Bu';

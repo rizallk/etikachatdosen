@@ -11,8 +11,8 @@ const formPesan = () => {
         mner.checked = true;
         enci.checked = false;
         if (mner) {
-          setData('penerima', 'Mner.');
-          jkPrev.innerHTML = getData('penerima');
+          setData('penerima', 'Mner');
+          jkPrev.innerHTML = getData('penerima') + '.';
           salamPrev.innerHTML = getData('salam') + ',';
           sp1.innerHTML = 'Apakah Mner ada waktu untuk minggu ini ?';
           sp2.innerHTML = 'Apakah Mner memiliki waktu ?';
@@ -43,8 +43,8 @@ const formPesan = () => {
         enci.checked = true;
         mner.checked = false;
         if (enci) {
-          setData('penerima', 'Enci.');
-          jkPrev.innerHTML = getData('penerima');
+          setData('penerima', 'Enci');
+          jkPrev.innerHTML = getData('penerima') + '.';
           salamPrev.innerHTML = getData('salam') + ',';
           sp1.innerHTML = 'Apakah Enci ada waktu untuk minggu ini ?';
           sp2.innerHTML = 'Apakah Enci memiliki waktu ?';
@@ -210,7 +210,7 @@ const formPesan = () => {
 
     // Field Ucapan
     ucapan.addEventListener('keyup', function () {
-       ucapan.value =
+      ucapan.value =
         ucapan.value.charAt(0).toUpperCase() + ucapan.value.slice(1);
       if (ucapan.value) {
         suggestUcap.classList.remove('d-block');
