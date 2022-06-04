@@ -210,6 +210,8 @@ const formPesan = () => {
 
     // Field Ucapan
     ucapan.addEventListener('keyup', function () {
+       ucapan.value =
+        ucapan.value.charAt(0).toUpperCase() + ucapan.value.slice(1);
       if (ucapan.value) {
         suggestUcap.classList.remove('d-block');
         suggestUcap.classList.add('d-none');
