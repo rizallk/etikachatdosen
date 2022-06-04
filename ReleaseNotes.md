@@ -1,6 +1,7 @@
 # Release Notes
 
 ## Update Beta 2.2
+(04-Juni-2022)
 - Bug Fixing
 
 ## Update Beta 2.0
