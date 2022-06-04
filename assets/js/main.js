@@ -6,13 +6,13 @@
 
 // Module
 
-import formAwal from "./module/formAwal.js";
-import validasiFormAwal from "./module/validasiFormAwal.js";
-import formPesan from "./module/formPesan.js";
-import validasiFormPesan from "./module/validasiFormPesan.js";
-import formProfil from "./module/formProfil.js";
-import fakultas from "./module/fakultas.js";
-import mainFunction from "./module/mainFunction.js";
+import formAwal from './module/formAwal.js';
+import validasiFormAwal from './module/validasiFormAwal.js';
+import formPesan from './module/formPesan.js';
+import validasiFormPesan from './module/validasiFormPesan.js';
+import formProfil from './module/formProfil.js';
+import fakultas from './module/fakultas.js';
+import mainFunction from './module/mainFunction.js';
 
 mainFunction();
 
@@ -28,15 +28,15 @@ formProfil();
 // +===========================================================+
 
 // Versi tools
-version.innerHTML = "Beta 2.0";
+version.innerHTML = 'Beta 2.2';
 
 // Title
-title.innerHTML = "E-tika Chat Dosen";
+title.innerHTML = 'E-tika Chat Dosen';
 
 // ================================================
 // Testing
 
-var str = "your long string with many words. anjay mabar";
+var str = 'your long string with many words. anjay mabar';
 var wordCount = str.match(/(\w+)/g).length;
 
 // for (let i = 0; i < wordCount; i++) {
