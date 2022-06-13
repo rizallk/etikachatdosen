@@ -79,26 +79,26 @@ const validasiFormPesan = () => {
       option1Prev.innerHTML = getData('option1');
     }
     option1.addEventListener('change', function () {
-      const text = 'mohon maaf menganggu waktunya.';
+      const text = 'mohon maaf mengganggu waktunya.';
       if (option1.checked) {
         if (mner.checked) {
           setData('option1', text);
-          jkPrev.innerHTML = 'Mner,';
+          jkPrev.innerHTML = 'Mner.';
           option1Prev.innerHTML = text;
         }
         if (bapak.checked) {
           setData('option1', text);
-          jkPrev.innerHTML = 'Pak,';
+          jkPrev.innerHTML = 'Pak.';
           option1Prev.innerHTML = text;
         }
         if (enci.checked) {
           setData('option1', text);
-          jkPrev.innerHTML = 'Enci,';
+          jkPrev.innerHTML = 'Enci.';
           option1Prev.innerHTML = text;
         }
         if (ibu.checked) {
           setData('option1', text);
-          jkPrev.innerHTML = 'Bu,';
+          jkPrev.innerHTML = 'Bu.';
           option1Prev.innerHTML = text;
         }
         setData('option1', text.charAt(0).toUpperCase() + text.slice(1));
@@ -106,19 +106,19 @@ const validasiFormPesan = () => {
       } else {
         setData('option1', '');
         if (mner.checked) {
-          jkPrev.innerHTML = 'Mner,';
+          jkPrev.innerHTML = 'Mner.';
           option1Prev.innerHTML = '';
         }
         if (bapak.checked) {
-          jkPrev.innerHTML = 'Pak,';
+          jkPrev.innerHTML = 'Pak.';
           option1Prev.innerHTML = '';
         }
         if (enci.checked) {
-          jkPrev.innerHTML = 'Enci,';
+          jkPrev.innerHTML = 'Enci.';
           option1Prev.innerHTML = '';
         }
         if (ibu.checked) {
-          jkPrev.innerHTML = 'Bu,';
+          jkPrev.innerHTML = 'Bu.';
           option1Prev.innerHTML = '';
         }
         option1Prev.innerHTML = '';
